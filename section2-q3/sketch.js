@@ -14,18 +14,22 @@ function setup() {
   const cy = height / 2;
   const maxR = min(width, height); // 大きさは幅と高さのうち小さい方
 
-  drawCircle(black, maxR);
-  drawArcs(green, red, maxR * 0.8);
+  drawCircle(black, maxR, cx, cy);
+  drawArcs(green, red, maxR * 0.8, cx, cy);
   // BLANK[1] (hint: drawArcs x 3, drawCircle x 1)
-  drawCircle(red, maxR * 0.05);
+  drawArcs(cream, black, maxR * 0.75, cx, cy);
+  drawArcs(green, red, maxR * 0.5, cx, cy);
+  drawArcs(cream, black, maxR * 0.45, cx, cy);
+  drawCircle(green, maxR * 0.1, cx, cy);
+  drawCircle(red, maxR * 0.05, cx, cy);
 }
 
-function drawCircle(c, r){
+function drawCircle(c, r, cx ,cy){
   fill(c);
   ellipse(cx, cy, r, r);
 }
 
-function drawArcs(c1, c2, r) {
+function drawArcs(c1, c2, r, cx, cy) {
   for (let i = 0; i < 20; i++) {
     let start = TWO_PI / 20 * i;
     let stop = TWO_PI / 20 * (i + 1);
